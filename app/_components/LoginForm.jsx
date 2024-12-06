@@ -3,14 +3,12 @@ import CustomButton from "./CustomButton";
 
 export default function LoginForm() {
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-          관리자 페이지 로그인
-        </h2>
+    <div className="flex flex-col w-full justify-center items-center">
+      <div className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        관리자 페이지 로그인
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-10">
         <form
           action={async (formData) => {
             "use server";
@@ -53,7 +51,7 @@ export default function LoginForm() {
           </div>
 
           <div>
-            <CustomButton>Sign in</CustomButton>
+            <CustomButton>로그인</CustomButton>
           </div>
         </form>
       </div>
