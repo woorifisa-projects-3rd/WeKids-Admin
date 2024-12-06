@@ -23,9 +23,10 @@ const UserSearchView = () => {
 
   const handleCardState = async (cardId, state) => {
     try {
-      await modifyCardState(cardId, state);
+      const response = await modifyCardState(cardId, state);
       const newData = { ...data };
       newData.card.state = state;
+      newData.card.inactiveDate = response.inactiveDate;
       setData(newData);
     } catch (error) {
       window.alert("카드 상태 변경에 실패했습니다.");
@@ -34,9 +35,10 @@ const UserSearchView = () => {
 
   const handleAccountState = async (accountId, state) => {
     try {
-      await modifyAccountState(accountId, state);
+      const response = await modifyAccountState(accountId, state);
       const newData = { ...data };
       newData.account.state = state;
+      newData.account.inactiveDate = response.inactiveDate;
       setData(newData);
     } catch (error) {
       window.alert("계좌 상태 변경에 실패했습니다.");
@@ -45,9 +47,10 @@ const UserSearchView = () => {
 
   const handleMemberState = async (memberId, state) => {
     try {
-      await modifyMemberState(memberId, state);
+      const response = await modifyMemberState(memberId, state);
       const newData = { ...data };
       newData.member.memberState = state;
+      newData.member.inactiveDate = response.inactiveDate;
       setData(newData);
     } catch (error) {
       window.alert("회원 상태 변경에 실패했습니다.");

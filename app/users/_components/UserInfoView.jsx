@@ -31,21 +31,34 @@ const UserInfoView = ({ data, handleCardState, handleAccountState, handleMemberS
             />
           </div>
         </div>
-
-        <CustomButton
-          size="medium"
-          rounded
-          onClick={async () => {
-            if (data.member?.memberId) {
-              await handleMemberState(
-                data.member.memberId,
-                data.member.memberState === "ACTIVE" ? "SLEEP" : "ACTIVE"
-              );
-            }
-          }}
-        >
-          {data.member.memberState === "ACTIVE" ? "회원 비활성화" : "회원 활성화"}
-        </CustomButton>
+        <div className="flex gap-5">
+          <CustomButton
+            size="medium"
+            rounded
+            onClick={async () => {
+              if (data.member?.memberId) {
+                await handleMemberState(
+                  data.member.memberId,
+                  data.member.memberState === "ACTIVE" ? "SLEEP" : "ACTIVE"
+                );
+              }
+            }}
+          >
+            {data.member.memberState === "ACTIVE" ? "회원 비활성화" : "회원 활성화"}
+          </CustomButton>
+          <CustomButton
+            color="red"
+            size="medium"
+            rounded
+            onClick={async () => {
+              if (data.member?.memberId) {
+                await handleMemberState(data.member.memberId, "LEAVE");
+              }
+            }}
+          >
+            회원 탈퇴
+          </CustomButton>
+        </div>
       </div>
 
       <div className="flex flex-col items-center gap-y-10 border-2 rounded-md p-5">

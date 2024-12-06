@@ -59,6 +59,10 @@ export const modifyCardState = async (cardId, state) => {
   });
 
   if (!response.ok) throw new Error("failed to modify");
+
+  const data = await response.json();
+
+  return data;
 };
 
 export const modifyAccountState = async (accountId, state) => {
@@ -74,6 +78,10 @@ export const modifyAccountState = async (accountId, state) => {
   });
 
   if (!response.ok) throw new Error("failed to modify");
+
+  const data = await response.json();
+
+  return data;
 };
 
 export const modifyMemberState = async (memberId, state) => {
@@ -89,4 +97,8 @@ export const modifyMemberState = async (memberId, state) => {
   });
 
   if (!response.ok) throw new Error("failed to modify");
+
+  const data = await response.json();
+
+  return data;
 };

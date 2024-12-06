@@ -13,6 +13,7 @@ const colors = {
   black10: "bg-black text-white bg-opacity-10 hover:bg-opacity-20",
   black40: "bg-black text-white bg-opacity-40 hover:bg-opacity-30",
   black80: "bg-black text-white bg-opacity-80 hover:bg-opacity-70",
+  red: "bg-red-500 text-white hover:bg-red-300",
 };
 
 const CustomButton = ({
